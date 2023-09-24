@@ -15,6 +15,9 @@ const calcAnswer = (question) => {
       return String(a * b);
     case '-':
       return String(a - b);
+    default:
+      // eslint-disable-next-line no-useless-return, consistent-return
+      return;
   }
 };
 
