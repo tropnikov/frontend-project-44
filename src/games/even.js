@@ -15,6 +15,7 @@ const brainEven = () => {
   const isWinner = playGame(getQuestion, calcAnswer);
 
   if (isWinner) console.log(`Congratulations, ${name}!`);
+  if (!isWinner) console.log(`Let's try again, ${name}!`);
 };
 
 export default brainEven;
