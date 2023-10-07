@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import greeting from '../greeting.js';
 import playGame from '../index.js';
 
 const calcAnswer = (num) => (num % 2 === 0 ? 'yes' : 'no');
@@ -8,14 +7,9 @@ const calcAnswer = (num) => (num % 2 === 0 ? 'yes' : 'no');
 const getQuestion = () => Math.trunc(Math.random() * 100);
 
 const brainEven = () => {
-  const name = greeting();
+  const question = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
-
-  const isWinner = playGame(getQuestion, calcAnswer);
-
-  if (isWinner) console.log(`Congratulations, ${name}!`);
-  if (!isWinner) console.log(`Let's try again, ${name}!`);
+  playGame(question, getQuestion, calcAnswer);
 };
 
 export default brainEven;

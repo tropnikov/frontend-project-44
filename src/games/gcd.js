@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import greeting from '../greeting.js';
 import playGame from '../index.js';
 
 const calcAnswer = (question) => {
@@ -23,14 +22,9 @@ const getQuestion = () => {
   return `${num1} ${num2}`;
 };
 const brainGcd = () => {
-  const name = greeting();
+  const question = 'Find the greatest common divisor of given numbers.';
 
-  console.log('Find the greatest common divisor of given numbers.');
-
-  const isWinner = playGame(getQuestion, calcAnswer);
-
-  if (isWinner) console.log(`Congratulations, ${name}!`);
-  if (!isWinner) console.log(`Let's try again, ${name}!`);
+  playGame(question, getQuestion, calcAnswer);
 };
 
 export default brainGcd;

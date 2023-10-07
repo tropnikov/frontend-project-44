@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import greeting from '../greeting.js';
 import playGame from '../index.js';
 
 const calcAnswer = (question) => {
@@ -30,14 +29,9 @@ const getQuestion = () => {
 };
 
 const brainCalc = () => {
-  const name = greeting();
+  const question = 'What is the result of the expression?';
 
-  console.log('What is the result of the expression?');
-
-  const isWinner = playGame(getQuestion, calcAnswer);
-
-  if (isWinner) console.log(`Congratulations, ${name}!`);
-  if (!isWinner) console.log(`Let's try again, ${name}!`);
+  playGame(question, getQuestion, calcAnswer);
 };
 
 export default brainCalc;

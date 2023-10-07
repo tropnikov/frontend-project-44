@@ -1,14 +1,20 @@
 #!/usr/bin/env node
 
-import greeting from '../greeting.js';
 import playGame from '../index.js';
 
 const calcAnswer = (num) => {
-  if (num === 2 || num === 3) return 'yes';
-  if (num <= 1 || num % 2 === 0 || num % 3 === 0) return 'no';
+  if (num === 2 || num === 3) {
+    return 'yes';
+  }
+
+  if (num <= 1 || num % 2 === 0 || num % 3 === 0) {
+    return 'no';
+  }
+
   for (let i = 5; i * i <= num; i += 6) {
     if (num % i === 0 || num % (i + 2) === 0) return 'no';
   }
+
   return 'yes';
 };
 
@@ -18,14 +24,9 @@ const getQuestion = () => {
 };
 
 const brainPrime = () => {
-  const name = greeting();
+  const question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-
-  const isWinner = playGame(getQuestion, calcAnswer);
-
-  if (isWinner) console.log(`Congratulations, ${name}!`);
-  if (!isWinner) console.log(`Let's try again, ${name}!`);
+  playGame(question, getQuestion, calcAnswer);
 };
 
 export default brainPrime;
