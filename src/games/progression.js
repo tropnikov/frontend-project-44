@@ -15,7 +15,9 @@ const calcAnswer = (question) => {
   }
   const ind = arr.indexOf('..');
 
-  const ans = Number(arr[0]) + Number(d * ind);
+  const ans = arr[0] !== '..'
+    ? Number(arr[0]) + Number(d * ind)
+    : Number(arr[1]) - Number(d);
   return String(ans);
 };
 
